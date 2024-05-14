@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<td>".$kuantiti."</td>";
     echo "<td>".$harga."</td>";
     echo "<td>".$subtotal."</td>";
+    echo "<td><button type='button' class='btn btn-danger btn-sm hapus_barang'>Hapus</button></td>";
     echo "</tr>";
 }
 ?>

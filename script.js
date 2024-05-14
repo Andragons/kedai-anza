@@ -86,31 +86,30 @@ $(document).ready(function () {
     });
   });
 
-  $('#proses').click(function() {
-    var uang_bayar = parseFloat($('#uang_bayar').val());
+  $("#proses").click(function () {
+    var uang_bayar = parseFloat($("#uang_bayar").val());
 
     // Periksa apakah kolom Uang Bayar kosong
     if (!uang_bayar) {
-        alert("Uang bayar tidak boleh kosong!");
-        return; // Berhenti eksekusi jika kolom Uang Bayar kosong
+      alert("Uang bayar tidak boleh kosong!");
+      return; // Berhenti eksekusi jika kolom Uang Bayar kosong
     }
 
     $.ajax({
-        type: 'POST',
-        url: 'proses.php',
-        data: { uang_bayar: uang_bayar },
-        dataType: 'json',
-        success: function(response) {
-            // Memperbarui nilai kembalian jika kurang dari 0
-            var kembalian = response.kembalian < 0 ? 0 : response.kembalian;
-            
-            $('#total_harga').val(response.total_harga);
-            $('#kembalian').val(kembalian);
-            $('#keterangan').val(response.keterangan);
-        }
-    });
-});
+      type: "POST",
+      url: "proses.php",
+      data: { uang_bayar: uang_bayar },
+      dataType: "json",
+      success: function (response) {
+        // Memperbarui nilai kembalian jika kurang dari 0
+        var kembalian = response.kembalian < 0 ? 0 : response.kembalian;
 
+        $("#total_harga").val(response.total_harga);
+        $("#kembalian").val(kembalian);
+        $("#keterangan").val(response.keterangan);
+      },
+    });
+  });
 
   $("#edit_harga").click(function () {
     var nama_barang = $("#search_barang").val();
@@ -148,5 +147,7 @@ $(document).ready(function () {
     }
   });
 
-  
+  $(document).on("click", ".hapus_barang", function () {
+    $(this).closest("tr").remove(); // Menghapus baris tabel saat tombol hapus ditekan
+  });
 });

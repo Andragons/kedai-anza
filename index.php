@@ -43,7 +43,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th width="20px">No</th>
                         <th>Barang</th>
                         <th>Kuantiti</th>
                         <th>Satuan</th>
