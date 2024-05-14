@@ -19,6 +19,22 @@ $(document).ready(function () {
     $("#search_result").html("");
     $.ajax({
       type: "POST",
+      url: "get_id_barang.php",
+      data: {
+        nama_barang: nama_barang,
+      },
+      success: function (response) {
+        $("#id").val(response);
+      },
+    });
+  });
+
+  $(document).on("click", ".barang_option", function () {
+    var nama_barang = $(this).text();
+    $("#search_barang").val(nama_barang);
+    $("#search_result").html("");
+    $.ajax({
+      type: "POST",
       url: "get_harga_barang.php",
       data: {
         nama_barang: nama_barang,
@@ -131,4 +147,6 @@ $(document).ready(function () {
       }
     }
   });
+
+  
 });

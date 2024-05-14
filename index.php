@@ -29,11 +29,12 @@
                 <label for="uang_bayar" class="form-label">Uang Bayar:</label>
                 <input type="text" class="form-control" id="uang_bayar" name="uang_bayar">
             </div>
-            <button type="button" class="btn btn-primary" id="tambah">Keranjang</button>
+            <button type="button" class="btn btn-primary" id="tambah">Add</button>
             <button type="button" class="btn btn-success" id="proses">Proses</button>
             <button type="button" class="btn btn-danger" id="reset">Reset</button>
             <button type="button" class="btn btn-warning" id="edit_harga">Edit</button>
             <a href="insert.html"><button type="button" class="btn btn-success" id="insert">+</button></a>
+            <a href="delete.html"><button type="button" class="btn btn-danger" id="insert">-</button></a>
             
 
         </form>
