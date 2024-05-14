@@ -33,7 +33,7 @@
             <button type="button" class="btn btn-success" id="proses">Proses</button>
             <button type="button" class="btn btn-danger" id="reset">Reset</button>
             <button type="button" class="btn btn-warning" id="edit_harga">Edit</button>
-            <a href="insert.html"><button type="button" class="btn btn-success" id="insert">Insert Produk</button></a>
+            <a href="insert.html"><button type="button" class="btn btn-success" id="insert">+</button></a>
             
 
         </form>
