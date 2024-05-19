@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Kasir</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,12 +33,15 @@
                 <label for="uang_bayar" class="form-label">Uang Bayar:</label>
                 <input type="text" class="form-control" id="uang_bayar" name="uang_bayar">
             </div>
-            <button type="button" class="btn btn-primary" id="tambah">Add</button>
-            <button type="button" class="btn btn-success" id="proses">Proses</button>
-            <button type="button" class="btn btn-danger" id="reset">Reset</button>
-            <button type="button" class="btn btn-warning" id="edit_harga">Edit</button>
-            <a href="insert.html"><button type="button" class="btn btn-success" id="insert">+</button></a>
-            <a href="delete.html"><button type="button" class="btn btn-danger" id="insert">-</button></a>
+            <div class="mb-2">
+                <button type="button" class="btn btn-primary" id="tambah"><i class="bi bi-cart-plus-fill"></i></button>
+                <button type="button" class="btn btn-success" id="proses"><i class="bi bi-gear-fill"></i></button>
+                <button type="button" class="btn btn-danger" id="reset"><i class="bi bi-arrow-counterclockwise"></i></button>
+                <button type="button" class="btn btn-warning" id="edit_harga"><i class="bi bi-cash-coin"></i></button><br>
+            </div>
+            <a href="insert.html"><button type="button" class="btn btn-success" id="insert"><i class="bi bi-database-add"></i></button></a>
+            <a href="delete.html"><button type="button" class="btn btn-danger" id="insert"><i class="bi bi-database-dash"></i></button></a>
+            <a href="list.php"><button type="button" class="btn btn-secondary" id="list"><i class="bi bi-list"></i></button></a>
             
 
         </form>
