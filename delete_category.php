@@ -14,11 +14,11 @@
     // Koneksi ke database
     include 'koneksi.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $id_barang = $_POST['id'];
-      $query = "DELETE FROM barang WHERE id = $id_barang";
+      $id_kategori = $_POST['id'];
+      $query = "DELETE FROM kategori WHERE id = $id_kategori";
 
       if (mysqli_query($conn, $query)) {
-        echo '<script>alert("Barang berhasil dihapus!!"); window.location.href = "index.php";</script>';
+        echo '<script>alert("Kategori berhasil dihapus!!"); window.location.href = "index.php";</script>';
         exit();
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -29,13 +29,25 @@
     <h2 class="my-4">Aplikasi Kasir</h2>
     <form method="post" action="" class="mb-5">
       <div class="mb-3">
-        <label for="search_barang" class="form-label">Search Nama Barang:</label>
-        <input type="text" class="form-control" id="search_barang" name="search_barang" autocomplete="off" />
-        <div id="search_result"></div>
+        <label for="kategori" class="form-label">Kategori:</label>
+        <select class="form-control" id="kategori" name="kategori" required>
+          <option value="" disabled selected>Pilih Kategori</option>
+          <?php
+          // Query untuk mendapatkan kategori
+          $sql = "SELECT id, nama FROM kategori";
+          $result = mysqli_query($conn, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<option value="' . $row['id'] . '">' . $row['nama'] . '</option>';
+            }
+          }
+          ?>
+        </select>
       </div>
       <div class="mb-3">
         <label for="id" class="form-label">ID:</label>
-        <input type="text" class="form-control" id="id" name="id" />
+        <input type="text" class="form-control" id="id" name="id" readonly />
       </div>
       <button type="submit" class="btn btn-danger" id="delete">Delete</button>
     </form>
@@ -44,7 +56,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('kategori').addEventListener('change', function () {
+      var selectedOption = this.options[this.selectedIndex];
+      document.getElementById('id').value = selectedOption.value;
+    });
+  </script>
 </body>
 
 </html>

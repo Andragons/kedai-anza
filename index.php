@@ -33,16 +33,26 @@
                 <label for="uang_bayar" class="form-label">Uang Bayar:</label>
                 <input type="text" class="form-control" id="uang_bayar" name="uang_bayar">
             </div>
-            <div class="mb-2">
-                <button type="button" class="btn btn-primary" id="tambah"><i class="bi bi-cart-plus-fill"></i></button>
-                <button type="button" class="btn btn-success" id="proses"><i class="bi bi-gear-fill"></i></button>
-                <button type="button" class="btn btn-danger" id="reset"><i class="bi bi-arrow-counterclockwise"></i></button>
-                <button type="button" class="btn btn-warning" id="edit_harga"><i class="bi bi-cash-coin"></i></button><br>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-2">
+                    <h5>Transaksi</h5>
+                    <button type="button" class="btn btn-primary" id="tambah"><i class="bi bi-cart-plus-fill"></i></button>
+                    <button type="button" class="btn btn-success" id="proses"><i class="bi bi-gear-fill"></i></button>
+                    <button type="button" class="btn btn-danger" id="reset"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    <button type="button" class="btn btn-warning" id="edit_harga"><i class="bi bi-cash-coin"></i></button><br>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <h5>Barang</h5>
+                    <a href="add_product.php"><button type="button" class="btn btn-success" id="add"><i class="bi bi-database-add"></i></button></a>
+                    <a href="delete.php"><button type="button" class="btn btn-danger" id="delete"><i class="bi bi-database-dash"></i></button></a>
+                    <a href="list.php"><button type="button" class="btn btn-secondary" id="list"><i class="bi bi-list"></i></button></a>
+                    <a href="add_category.php"><button type="button" class="btn btn-info" id="categori"><i class="bi bi-plus-square"></i></button></a>
+                    <a href="delete_category.php"><button type="button" class="btn btn-danger" id="delete_category"><i class="bi bi-plus-square"></i></button></a>
+                </div>
             </div>
-            <a href="insert.html"><button type="button" class="btn btn-success" id="insert"><i class="bi bi-database-add"></i></button></a>
-            <a href="delete.html"><button type="button" class="btn btn-danger" id="insert"><i class="bi bi-database-dash"></i></button></a>
-            <a href="list.php"><button type="button" class="btn btn-secondary" id="list"><i class="bi bi-list"></i></button></a>
-            
+
+
 
         </form>
         <div id="output" class="mt-4">
